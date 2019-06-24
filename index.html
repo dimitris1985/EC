@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+	<title>Yu-Gi-Oh! Deck Browser</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+
+	<!-- load bootstrap css -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<!-- load fontawesome css -->
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+
+	<!-- load custom css -->
+	<link rel="stylesheet" href="css/app.css" />
+
+
+</head>
+<body ng-controller="mainController">
+
+<div id="Wrapper" class="container-fluid">
+	<div id="page-wrapper" ng-class="{'open': toggle}">
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar">
+				<li class="sidebar-main"><a ng-click="toggleSidebar()">Card Name<span class="menu-icon glyphicon glyphicon-transfer"></span></a></li>
+			</ul>
+
+			<abn-tree on-select="my_tree_handler(branch.label)" tree-data="my_data" icon-leaf= "fa fa-folder-o" expand-level="2" initial-selection="Burial from a Different Dimension"></abn-tree>
+
+		</div><!-- // #sidebar-wrapper -->
+		<!-- End Sidebar -->
+		<div id="contentWrapper" class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">Card Information</div>
+                <div class="panel-body">
+                    <div class="media">
+                        <h1>
+                            {{ card_data.data.name }}
+                        </h1>
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="http://yugiohprices.com/api/card_image/{{card_data.data.name}}" alt="{{ card_data.data.name }}">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Card Type</h3>
+                            <span class="label label-default">{{ card_data.data.card_type }}</span>
+
+                            <h3 class="media-heading">Description</h3>
+                            {{ card_data.data.text }}
+                        </div>
+                    </div><!--media-->
+                </div><!--panel-body-->
+            </div><!--panel-->
+		</div><!-- // #contentWrapper -->
+	</div><!-- // #page-wrapper -->
+</div><!-- // .container-fluid -->
+
+<!-- JavaScript -->
+<script src="js/angular.min.js" type="text/javascript"></script>
+<script src="js/ui-bootstrap.min.js" type="text/javascript"></script>
+<script src="js/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+<script src="js/abn_tree_directive.js" type="text/javascript"></script>
+<script src="js/angular-animate.min.js" type="text/javascript"></script>
+<script src="js/app.js" type="text/javascript"></script>
+<!-- END JavaScript -->
+</body>
+</html>

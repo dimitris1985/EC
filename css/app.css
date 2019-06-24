@@ -1,0 +1,77 @@
+/*Yu-Gi-Oh! Deck Browser css*/
+
+body {background: #ececec;font-family: 'segoe ui', 'Microsoft Yahei',Helvetica,Arial,sans-serif;}
+#page-wrapper {padding-left: 70px;height: 100%;}
+#page-wrapper.open {padding-left: 330px;}
+#sidebar-wrapper {margin-left: -235px;left: -30px;width: 330px;position: fixed;height: 100%;z-index: 1;}
+#page-wrapper, #sidebar-wrapper {transition: all .4s ease 0s;}
+#sidebar-wrapper {background: #787a81;}
+#page-wrapper.open #sidebar-wrapper {left: 235px; overflow: auto;}
+ul.sidebar {position: relative;top: 0;bottom: 0;padding: 0;margin: 0;list-style: none;text-indent: 20px;overflow-x: hidden;overflow-y: auto;background-color:#5c5d62;}
+ul.sidebar li a {color: #fff;display: block;float: left;text-decoration: none;width: 320px;}
+ul.sidebar .sidebar-main {height: 50px;}
+ul.sidebar .sidebar-main a {font-size: 18px;line-height: 50px;}
+ul.sidebar .sidebar-main .menu-icon {float: right;font-size: 18px;padding-right: 15px;line-height: 48px;}
+#contentWrapper {padding-left: 0;margin-left: 0;width: 100%;height: auto; padding-top: 20px;}
+.row.header {height: 60px;background: #fff; margin-bottom: 15px;}
+.nav>li>a:focus,.nav>li>a:hover{texst-decoration: none;background-color:transparent;}
+.open .nav>li>a:focus,.open .nav>li>a:hover{text-decoration: none;}
+.nav-pills>li.active>a,.nav-pills>li.active>a:focus,.nav-pills>li.active>a:hover {color: #fff;background-color:transparent;}
+.open .nav-pills>li.active>a,.open .nav-pills>li.active>a:focus,.open .nav-pills>li.active>a:hover {color: #444;background-color: #f5f7f8;}
+ul.abn-tree{display:none;}
+.open ul.abn-tree{display:block;}
+.label-default {background-color: #787a81;}
+
+/*Media Starts*/
+.media h1 {text-align: center;margin-bottom: 30px;font-weight: bold;}
+.media-body {font-size: 18px;}
+.media-heading {font-weight: bold;}
+/*Media Ends*/
+
+/*Panel Starts*/
+.panel-default {border: 0 none;}
+.panel-default>.panel-heading {border: 0;background-color: #787a81;padding: 4px 15px;color: #fff;font-weight: 500;border-radius: 3px 3px 0 0;font-size: 18px;}
+/*Panel Ends*/
+
+/*Tree Starts*/
+.abn-tree-animate-enter,
+li.abn-tree-row.ng-enter {transition: 200ms linear all;position: relative; display: block;max-height:0px;}
+.abn-tree-animate-enter.abn-tree-animate-enter-active,
+li.abn-tree-row.ng-enter-active{opacity: 1;max-height:30px;}
+.abn-tree-animate-leave,
+li.abn-tree-row.ng-leave {transition: 200ms linear all;position: relative;display: block;height:30px;max-height: 30px;opacity: 1;}
+.abn-tree-animate-leave.abn-tree-animate-leave-active,
+li.abn-tree-row.ng-leave-active {height: 0px;max-height:0px;opacity: 0;}
+ul.abn-tree li.abn-tree-row {padding: 0px;margin:0px;}
+ul.abn-tree li.abn-tree-row a {padding: 3px 4px;color: #f1f1f1;border-radius:0;}
+ul.abn-tree i.indented {padding: 4px 8px 2px 2px;}
+.abn-tree {cursor: pointer;padding-left:15px;}
+ul.nav.abn-tree .level-1 .indented {position: relative;left: 0px;}
+ul.nav.abn-tree .level-2 .indented {position: relative;left: 20px;}
+ul.nav.abn-tree .level-3 .indented {position: relative;left: 40px;}
+ul.nav.abn-tree .level-4 .indented {position: relative;left: 60px;}
+ul.nav.abn-tree .level-5 .indented {position: relative;left: 80px;}
+ul.nav.abn-tree .level-6 .indented {position: relative;left: 100px;}
+ul.nav.nav-list.abn-tree .level-7 .indented {position: relative;left: 120px;}
+ul.nav.nav-list.abn-tree .level-8 .indented {position: relative;left: 140px;}
+ul.nav.nav-list.abn-tree .level-9 .indented {position: relative;left: 160px;}
+ul.nav.nav-list.abn-tree{margin-bottom:40px;}
+.fa-plus:before {content: "\f07b";}
+.fa-minus:before {content: "\f07c";}
+/*Tree Ends*/
+
+/*Responsive*/
+@media only screen and (max-width: 768px) {
+    #page-wrapper.open #sidebar-wrapper {left: 0;overflow: auto; width: 100%; position: relative; margin-left: 0;}
+    .container-fluid {padding: 0;}
+    ul.sidebar li a {width: 100%;}
+    #page-wrapper.open {padding-left: 0px;}
+    .media-body {display: block; width: 100%;padding-top: 20px; font-size: 15px;}
+    #contentWrapper {padding: 0 15px;}
+    .media h1{font-size: 30px;}
+    .media-heading {font-size: 25px;}
+    #sidebar-wrapper {margin-left: -255px;}
+    .media-left {display: block;}
+    .media-object {margin: 0 auto;}
+}
+/*END Responsive*/
